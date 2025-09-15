@@ -1,0 +1,243 @@
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* ----- HEADER ----- */
+header {
+  background: #f8f8f8;
+  padding: 20px;
+  position: relative;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;  /* center on desktop */
+  align-items: center;
+  position: relative;
+}
+
+.title-block {
+  text-align: center;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+header p {
+  margin: 5px 0 20px;
+}
+
+/* Logo top-right */
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 900;
+}
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+}
+
+/* ----- NAVIGATION ----- */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav li {
+  margin: 5px 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav a.active,
+nav a:hover {
+  font-weight: bold;
+}
+
+/* Hamburger hidden by default */
+.menu-toggle {
+  display: none;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+}
+
+/* ----- MAIN CONTENT ----- */
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ----- TABLE ----- */
+.table-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table thead th {
+  border-bottom: 2px solid #333;
+  text-align: left;
+  padding: 8px;
+}
+
+table tbody td {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+/* ----- FOOTER ----- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f0f0f0;
+  margin-top: 40px;
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+@media screen and (max-width: 768px) {
+  /* Show hamburger only on mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav by default on mobile */
+nav ul {
+  display: none;
+  flex-direction: column;
+  background: #f8f8f8;
+  padding: 10px;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 200px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  z-index: 2000; /* make sure menu shows above logo */
+}
+
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  /* Mobile logo smaller */
+  .logo img {
+    max-width: 70px;
+  }
+
+  /* Title left aligned on mobile */
+  .title-block {
+    text-align: left;
+    margin-right: 90px; /* leaves room so it never overlaps logo */
+  }
+
+  /* ----- Mobile table stacked ----- */
+  table thead {
+    display: none;
+  }
+
+  table,
+  table tbody,
+  table tr,
+  table td {
+    display: block;
+    width: 100%;
+  }
+
+  table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  table td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+    text-align: left;
+    position: relative;
+    word-break: break-word;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #444;
+  }
+}
+
+main p {
+  text-align: justify;
+}
+
+.red-text {
+  color: red;
+  font-weight: bold; /* optional */
+}
+
+footer.credits {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #666;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+}
+
+
+
+
+
+
+
+
